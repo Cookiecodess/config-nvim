@@ -1,0 +1,12 @@
+-- this was part of an attempt to map Ctrl-Backtick (which nvim reads as <C-space>)
+-- to something else -- see lua/config/keymaps.lua:20-46 at commit [hash]
+-- tip: run `:map <c-space>` to check the path of the config file
+-- that sets keymaps (if any) for <c-space>.
+-- return {
+--   {
+--     "folke/flash.nvim",
+--     keys = {
+--       { "<c-space>", false },
+--     },
+--   },
+-- }
