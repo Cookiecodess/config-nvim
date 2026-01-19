@@ -17,6 +17,9 @@ vim.keymap.set({ "i", "c" }, "<C-h>", "<C-w>")
 -- where '|' is the cursor and doing <C-Del> would result in '1231|2345'.
 -- vim.keymap.set("i", "<C-Del>", "<Esc>ldwa")
 
+-- keymap for a rename feature provided by the plugin `smjonas/inc-rename.nvim`.
+vim.keymap.set("n", "<leader>rn", ":IncRename ")
+
 -- By default lazyvim maps <C-/> to opening the terminal at a new horizontally split window
 --   We map <C-`> (the vscode way) to that.
 --   this also frees up <C-/> so we can map it to comment/uncommenting!
