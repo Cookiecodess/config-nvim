@@ -12,10 +12,13 @@ vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
 
-vim.keymap.set({ "i", "c" }, "<C-h>", "<C-w>")
+vim.keymap.set({ "i", "c", "t" }, "<C-h>", "<C-w>")
 -- the below is buggy if the line were, for example, '123|45 12345'
 -- where '|' is the cursor and doing <C-Del> would result in '1231|2345'.
 -- vim.keymap.set("i", "<C-Del>", "<Esc>ldwa")
+
+vim.keymap.set({ "n", "i" }, "<M-h>", "<C-o>", { desc = "Jump backwards (see :h jumplist)" })
+vim.keymap.set({ "n", "i" }, "<M-l>", "<C-i>", { desc = "Jump forward (see :h jumplist)" })
 
 -- keymap for a rename feature provided by the plugin `smjonas/inc-rename.nvim`.
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
