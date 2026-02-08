@@ -16,3 +16,18 @@ vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "FocusLost", "BufLea
     end
   end,
 })
+
+-- treat the file extensions listed in `pattern`
+-- as zip files, so we can view their contents in vim
+-- see `:h zip-extension` for the guide on creating
+-- an autocmd for this purpose in .vimrc 
+-- Since i'm using lazyvim, this is the lazyvim equivalent
+-- of the code that the documentation suggested I use.
+-- For more information about vim's zip capabilities,
+-- see `:h zip`
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = {"*.jar", "*.xpi"},
+  callback = function()
+    vim.cmd("call zip#Browse(expand('<amatch>'))")
+  end,
+})
