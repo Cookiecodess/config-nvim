@@ -14,8 +14,8 @@ my config closely follows this awesome guide: https://vonheikemen.github.io/devl
 
 | keymap | description |
 |---------|-------------|
-| <C-w> h/j/k/l | Switch focus to other windows (hjkl denotes direction)
-| <C-w> c | Close current window |
+| `<C-w> h/j/k/l` | Switch focus to other windows (hjkl denotes direction)
+| `<C-w> c` | Close current window |
 
 useful **LSP keymaps** (default for Neovim v0.11) are documented in the `CONFIGURE LANGUAGE SERVERS > LSP KEYMAPS` section in [init.lua](init.lua), but here are some really useful ones:
 - `K`: invokes `vim.lsp.buf.hover()` which shows a floating window displaying documentation of the symbol under the cursor, if it exists.
@@ -30,10 +30,10 @@ useful **LSP keymaps** (default for Neovim v0.11) are documented in the `CONFIGU
 
 | command | description |
 |---------|-------------|
-| :ls / :buffers | list open buffers and their IDs (numbers) |
-| :buffer N | switch to a buffer by its ID (a number) |
-| :bn / :bnext | switch to next buffer |
-| :bp / :bprevious | switch to previous buffer |
-| :!<cmd> | run shell command. e.g. `:!ls` lists current working directory. |
-| :read !<cmd> | run shell command and insert its output into current buffer. |
-| :!<cmd> % | `%` will be substituted with current file name. e.g. `:!cat %` prints content of current file |
+| `:ls` / `:buffers` | list open buffers and their IDs (numbers) |
+| `:buffer N` | switch to a buffer by its ID (a number) |
+| `:bn` / `:bnext` | switch to next buffer |
+| `:bp` / `:bprevious` | switch to previous buffer |
+| `:!<cmd>` | run shell command. e.g. `:!ls` lists current working directory. |
+| `:read !<cmd>` | run shell command and insert its output into current buffer. |
+| `:!<cmd> %` | `%` will be substituted with current file name. e.g. `:!cat %` prints content of current file |
