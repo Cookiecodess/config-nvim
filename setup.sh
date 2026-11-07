@@ -49,22 +49,24 @@ if ! mkdir -p "$nvim_config_dir"; then
     die "Could not create Neovim config directory: $nvim_config_dir"
 fi
 
+printf '[INFO] Created empty Neovim config directory: %s\n' "$nvim_config_dir"
+
 init_lua=$nvim_config_dir/init.lua
 
-if [ -e "$init_lua" ] || [ -L "$init_lua" ]; then
-    if [ -f "$init_lua" ]; then
-        printf '[INFO] Keeping existing init.lua: %s\n' "$init_lua"
-    else
-        die "init.lua exists but is not a regular file: $init_lua"
-    fi
-else
-    # noclobber prevents overwriting a file created between the check and redirect.
-    if (set -C; : > "$init_lua") 2>/dev/null; then
-        printf '[INFO] Created init.lua: %s\n' "$init_lua"
-    else
-        die "Could not create: $init_lua"
-    fi
-fi
+# if [ -e "$init_lua" ] || [ -L "$init_lua" ]; then
+#     if [ -f "$init_lua" ]; then
+#         printf '[INFO] Keeping existing init.lua: %s\n' "$init_lua"
+#     else
+#         die "init.lua exists but is not a regular file: $init_lua"
+#     fi
+# else
+#     # noclobber prevents overwriting a file created between the check and redirect.
+#     if (set -C; : > "$init_lua") 2>/dev/null; then
+#         printf '[INFO] Created init.lua: %s\n' "$init_lua"
+#     else
+#         die "Could not create: $init_lua"
+#     fi
+# fi
 
 if ! nvim_data_dir="$(
     nvim --headless --clean \
