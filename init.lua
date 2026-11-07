@@ -28,10 +28,10 @@ vim.o.signcolumn = 'yes'
 -- THEME
 --
 
-local ok_theme = pcall(vim.cmd.colorscheme, 'retrobox')
-if not ok_theme then
-  vim.cmd.colorscheme('habamax')
-end
+-- local ok_theme = pcall(vim.cmd.colorscheme, 'retrobox')
+-- if not ok_theme then
+--   vim.cmd.colorscheme('habamax')
+-- end
 
 -- 
 -- KEYMAPS
@@ -103,6 +103,49 @@ end
 --   for the `mini.deps` module we have to use a function
 --   called `.setup()`
 MiniDeps.setup({})
+
+---
+--- PLUGINS > COLOR SCHEME / THEME
+---
+
+MiniDeps.add({ source = 'https://codeberg.org/evergarden/nvim', name = 'evergarden' })
+
+local ok, Evergarden = pcall(require, 'evergarden')
+if not ok then 
+	vim.notify('[WARN] evergarden module not found', vim.log.levels.WARN)
+	return
+end
+
+require 'evergarden'.setup {
+  theme = {
+    variant = 'winter', -- 'winter'|'fall'|'spring'|'summer'
+    accent = 'green',
+  },
+  editor = {
+    transparent_background = false,
+    override_terminal = true,
+    sign = { color = 'none' },
+    float = {
+      color = 'mantle',
+      solid_border = false,
+    },
+    completion = {
+      color = 'surface0',
+    },
+  },
+  style = {
+    tabline = { 'reverse' },
+    search = { 'italic', 'reverse' },
+    incsearch = { 'italic', 'reverse' },
+    types = { 'italic' },
+    keyword = { 'italic' },
+    comment = { 'italic' },
+  },
+  overrides = {},
+  color_overrides = {},
+}
+
+vim.cmd.colorscheme('evergarden')
 
 ---
 --- PLUGINS > LSP config
