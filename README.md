@@ -1,9 +1,16 @@
 # cookie's minimal Neovim config
 
+## IMPORTANT, READ BEFORE USE
+
+running the setup script `setup.sh` WILL overwrite your existing `init.lua` file in your Neovim config directory!!!
+
+please make a backup of your Neovim config directory before running the setup script!!!!!
+
 ## how to use 
 
+1. clone this repo in a directory that's not your Neovim config directory
 1. run `setup.sh`
-2. `setup.sh` should print Neovim's config directory. Copy `init.lua` in there. Or all contents of this repo, if you want. The path of the `init.lua` should be `<NVIM_CONFIG_DIR>/init.lua`.
+2. `setup.sh` should print Neovim's config directory. Copy all contents of this repo in your Neovim config directory. After you do this, the path of the `init.lua` should be `<NVIM_CONFIG_DIR>/init.lua`.
 3. Neovim is ready to use
 
 `init.lua` is heavily commented so give it a read to understand the config.
