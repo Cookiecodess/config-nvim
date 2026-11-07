@@ -17,11 +17,11 @@ need mkdir
 need mv
 
 # Query stdpath with user config disabled, so its output stays clean.
-if ! nvim_config_dir=$(
+if ! nvim_config_dir="$(
     nvim --headless --clean \
         -c 'lua print(vim.fn.stdpath("config"))' \
-        -c 'qa!'
-); then
+        -c 'qa!' 2>&1
+)"; then
     die "Could not get Neovim's config directory"
 fi
 [ -n "$nvim_config_dir" ] || die "Neovim returned an empty config directory"
@@ -66,11 +66,11 @@ else
     fi
 fi
 
-if ! nvim_data_dir=$(
+if ! nvim_data_dir="$(
     nvim --headless --clean \
         -c 'lua print(vim.fn.stdpath("data"))' \
-        -c 'qa!'
-); then
+        -c 'qa!' 2>&1
+)"; then
     die "Could not get Neovim's data directory"
 fi
 [ -n "$nvim_data_dir" ] || die "Neovim returned an empty data directory"
