@@ -1,11 +1,5 @@
 # cookie's minimal Neovim config
 
-## IMPORTANT, READ BEFORE USE
-
-running the setup script `setup.sh` WILL overwrite your existing `init.lua` file in your Neovim config directory!!!
-
-please make a backup of your Neovim config directory before running the setup script!!!!!
-
 ## how to use 
 
 1. clone this repo in a directory that's not your Neovim config directory
