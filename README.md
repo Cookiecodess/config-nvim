@@ -3,10 +3,11 @@
 ## how to use 
 
 1. clone this repo in a directory that's not your Neovim config directory
-1. run `setup.sh`
-2. `setup.sh` should print Neovim's config directory. Copy all contents of this repo in your Neovim config directory. After you do this, the path of the `init.lua` should be `<NVIM_CONFIG_DIR>/init.lua`.
-3. configure LSP servers that you need in the `CONFIGURE LANGUAGE SERVERS` section of `init.lua`, by adding `lsp_setup(<lang_server_config_name>, <options>)` lines.
-3. Neovim is ready to use
+2. run `setup.sh`
+3. `setup.sh` should print Neovim's config directory. Copy all contents of this repo in your Neovim config directory. After you do this, the path of the `init.lua` should be `<NVIM_CONFIG_DIR>/init.lua`.
+4. configure LSP servers that you need in the `CONFIGURE LANGUAGE SERVERS` section of `init.lua`, by adding `lsp_setup(<lang_server_config_name>, <options>)` lines.
+  - NOTE: this config uses neovim/nvim-lspconfig to set up language servers in `init.lua`. you need to make sure the relevant LSP executables are installed and added to PATH, so nvim can access them. do `:checkhealth vim.lsp` or `:LspInfo` to check if your language servers are set up correctly.
+5. Neovim is ready to use
 
 `init.lua` is heavily commented so give it a read to understand the config.
 
