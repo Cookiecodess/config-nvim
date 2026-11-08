@@ -56,3 +56,15 @@ vim.keymap.set('n', '<M-k>', '<C-y>', {desc = 'Scroll page up one line'})
 -- Shift+H/L to switch between buffers
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<CR>', {desc = 'Switch to previous buffer'})
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<CR>', {desc = 'Switch to next buffer'})
+
+-- -- Alt+<number> to switch to <number>-th buffer as shown in mini.tabline and as listed by :buffers
+-- -- where <number> is 1 through 9
+-- for i = 1, 9 do
+--   vim.keymap.set('n', '<M-' .. i .. '>', function()
+--     local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+--     if buffers[i] then
+--       vim.api.nvim_set_current_buf(buffers[i].bufnr)
+--     end
+--   end, { desc = 'Switch to buffer ' .. i .. ' (not the ID but the order as listed by :buffers)' })
+-- end
+
