@@ -1,4 +1,8 @@
 require('config.options')
+require('config.keymaps')
+require('config.autocmds')
+
+require('plugins')
 
 --
 -- THEME
@@ -9,6 +13,3 @@ require('config.options')
 --   vim.cmd.colorscheme('habamax')
 -- end
 
-require('config.keymaps')
-
-require('plugins')

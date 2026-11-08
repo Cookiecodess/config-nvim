@@ -9,22 +9,6 @@
 --   existing keymap or Ex-command (scroll down for notes on Ex-commands) to bind to
 --   metadata object containing attributes like `desc`
 
-vim.keymap.set({'n', 'x'}, 'gy', '"+y', {desc = 'Copy to clipboard'})
-vim.keymap.set({'n', 'x'}, 'gp', '"+p', {desc = 'Paste clipboard text'})
-
--- Ctrl+Backspace to delete previous word
-vim.keymap.set({'n', 'i'}, '<C-h>', '<C-w>', {desc = 'Delete previous word'})
-
--- Alt+H/L to jump to prev/next cursor locations
--- useful for jumping back after jumping to type definition
-vim.keymap.set('n', '<M-h>', '<C-o>', {desc = 'Jump to previous cursor location'})
-vim.keymap.set('n', '<M-l>', '<C-i>', {desc = 'Jump to next cursor location'})
-
--- in windows terminal Ctrl+V pastes.
--- you can only unbind globally but i wanna use it for powershell.
--- so i override <C-v> behavior in nvim.
-vim.keymap.set('n', '<C-v>', '<C-q>', {desc = 'Switch to Visual Block mode'})
-
 -- notes on leader key
 -- denoted by <leader>, by default it's `\`, so <leader>h means \ + h.
 
@@ -45,3 +29,23 @@ vim.g.mapleader = ' '
 --   e.g. vim.keymap.set('n', '<leader>w', '<cmd>write<cr>', {desc = 'Save file'})
 --   e.g. vim.keymap.set('n', '<leader>q', '<cmd>quitall<cr>', {desc = 'Exit vim'})
 -- 2. idk the guide i was reading didnt mention this second method
+
+vim.keymap.set({'n', 'x'}, 'gy', '"+y', {desc = 'Copy to clipboard'})
+vim.keymap.set({'n', 'x'}, 'gp', '"+p', {desc = 'Paste clipboard text'})
+
+-- Ctrl+Backspace to delete previous word
+vim.keymap.set({'n', 'i'}, '<C-h>', '<C-w>', {desc = 'Delete previous word'})
+
+-- Alt+H/L to jump to prev/next cursor locations
+-- useful for jumping back after jumping to type definition
+vim.keymap.set('n', '<M-h>', '<C-o>', {desc = 'Jump to previous cursor location'})
+vim.keymap.set('n', '<M-l>', '<C-i>', {desc = 'Jump to next cursor location'})
+
+-- in windows terminal Ctrl+V pastes.
+-- you can only unbind globally but i wanna use it for powershell.
+-- so i override <C-v> behavior in nvim.
+vim.keymap.set('n', '<C-v>', '<C-q>', {desc = 'Switch to Visual Block mode'})
+
+-- Alt+J/K to scroll page one line up/down without moving the cursor
+vim.keymap.set('n', '<M-j>', '<C-e>', {desc = 'Scroll page down one line'})
+vim.keymap.set('n', '<M-k>', '<C-y>', {desc = 'Scroll page up one line'})
