@@ -2,6 +2,9 @@
 -- KEYMAPS
 --
 
+-- NOTES: Some plugin-specific custom keymaps are set in
+--        lua/plugins/init.lua
+
 -- notes on vim.keymap.set()
 -- args: 
 --   a list of vim modes or a string if there's only one mode, e.g. {'n','x'} means normal and visual modes, 'n' means normal mode only
@@ -46,6 +49,10 @@ vim.keymap.set('n', '<M-l>', '<C-i>', {desc = 'Jump to next cursor location'})
 -- so i override <C-v> behavior in nvim.
 vim.keymap.set('n', '<C-v>', '<C-q>', {desc = 'Switch to Visual Block mode'})
 
--- Alt+J/K to scroll page one line up/down without moving the cursor
+-- Alt+J/K to scroll page one line down/up without moving the cursor
 vim.keymap.set('n', '<M-j>', '<C-e>', {desc = 'Scroll page down one line'})
 vim.keymap.set('n', '<M-k>', '<C-y>', {desc = 'Scroll page up one line'})
+
+-- Shift+H/L to switch between buffers
+vim.keymap.set('n', '<S-h>', '<cmd>bprevious<CR>', {desc = 'Switch to previous buffer'})
+vim.keymap.set('n', '<S-l>', '<cmd>bnext<CR>', {desc = 'Switch to next buffer'})

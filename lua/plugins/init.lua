@@ -138,10 +138,14 @@ require('mini.files').setup({
 -- to know what setings there are, run:
 --   :help mini.file
 
+require('mini.tabline').setup()
+
 -- if your terminal font doesn't support icons,
 -- you can add the `mini.icons` module.
 -- or, just install a terminal font that does: Nerd Fonts!
 -- require('mini.icons').setup({style = 'ascii'})
+
+require('mini.icons').setup()
 
 -- the below is for when you don't have any plugins installed,
 -- in which case you can use the `files` command (same as `buffers` and `ls`) to list open files
