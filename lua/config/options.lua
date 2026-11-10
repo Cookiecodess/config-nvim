@@ -23,3 +23,6 @@ vim.o.hlsearch = false
 
 -- reserve a space in the gutter for signs. some plugins use this to show icons
 vim.o.signcolumn = 'yes'
+
+-- disable swap files
+vim.o.swapfile = false
